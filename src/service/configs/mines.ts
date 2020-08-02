@@ -31,7 +31,6 @@ export const makeMines = (mineCount: number, cells: Cell[][], options: number[][
     const row = choice[1];
     cells[col][row].isMine = true;
   }
-  console.log(cells);
   return cells;
 };
 
