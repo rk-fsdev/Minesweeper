@@ -34,7 +34,7 @@ const Home: React.FC<BoxProps> = ({ ...restProps }: BoxProps) => {
 
   const renderCells = () =>
     cells.map((column, colIndex) => (
-      <Box key={colIndex} height="40px" display="flex">
+      <Box key={colIndex} display="flex" flexDir="column">
         {column.map((row, rowIndex) => (
           <MineCell key={rowIndex} data={cells[colIndex][rowIndex]} onClick={(e) => onClick(e, colIndex, rowIndex)} />
         ))}
@@ -73,7 +73,9 @@ const Home: React.FC<BoxProps> = ({ ...restProps }: BoxProps) => {
           Click mine with Alt key to flag the cell.
         </Text>
       </Box>
-      <Box {...cellBoxProps}>{renderCells()}</Box>
+      <Box display="flex" {...cellBoxProps}>
+        {renderCells()}
+      </Box>
     </Box>
   );
 };

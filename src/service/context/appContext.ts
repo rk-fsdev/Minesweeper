@@ -40,10 +40,10 @@ interface AppPayload {
 export type AppAction = ActionMap<AppPayload>[keyof ActionMap<AppPayload>];
 
 export const appInitialState: AppState = {
-  cells: generateCells(10, 10, 10),
-  cols: 10,
+  cells: generateCells(15, 10, 30),
+  cols: 15,
   rows: 10,
-  mines: 10,
+  mines: 30,
   gameStatus: GameStatus.Started,
 };
 
